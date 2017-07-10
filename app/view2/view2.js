@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view2', ['ui.router'])
+angular.module('bookingApp.view2', ['ui.router'])
 
 .config(['$stateProvider', function($stateProvider) {
   $stateProvider.state('view2', {

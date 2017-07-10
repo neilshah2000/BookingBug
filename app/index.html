@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="bookingApp" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,9 +28,35 @@
 
   <div>Angular seed app: v<span app-version></span></div>
 
+
+  <div>
+    <div ng-controller="BookableServicesPagePageController as vm">
+        <div class="searchSection jumbotron">
+            <form class="searchForm" ng-submit="vm.search(vm.searchTerm)">
+                <h2>Find Venues</h2>
+                <input type="text" ng-model="vm.searchTerm" />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+        <div class="sortSection">
+            Sort:
+            <button class="btn-default" ng-click="vm.alphabetical()">alphabetical</button>
+            <button class="btn-default" ng-click="vm.recomended()">recomended</button>
+        </div>
+        <div class="resultsSection">
+            <div ng-repeat="venue in vm.venues">
+                <venue-component venue="venue" test="item.firstName"></venue-component>
+            </div>
+        </div>
+    </div>
+</div>
+
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -40,5 +66,7 @@
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+  <script src="controllers/bookableServicesPage.controller.js"></script>
+  <script src="services/data.service.js"></script>
 </body>
 </html>

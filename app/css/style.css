@@ -1,0 +1,22 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: red;
+  width: 100%; }
+
+.searchSection {
+  display: flex;
+  justify-content: center; }
+  .searchSection .searchForm {
+    width: 200px; }
+
+.sortSection {
+  height: 50px; }
+
+.resultsSection {
+  color: black; }
+  .resultsSection .venueTile {
+    box-shadow: 1px 1px 10px 0px rgba(50, 50, 50, 0.62);
+    height: 300px; }
+    .resultsSection .venueTile .detail {
+      font-size: small;
+      padding-top: 10px; }
