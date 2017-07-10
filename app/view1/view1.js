@@ -9,7 +9,7 @@ angular.module('myApp.view1', ['ui.router'])
     controller: 'View1Ctrl'
   });
 }])
-
+//test
 .controller('View1Ctrl', [function() {
   console.log('View1Ctrl');
 
